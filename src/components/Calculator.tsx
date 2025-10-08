@@ -20,7 +20,7 @@ import { toast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 // Webhook URL - this is a public endpoint so it's safe to store in code
-const SIMULATION_WEBHOOK_URL = import.meta.env.VITE_SIMULATION_WEBHOOK_URL;
+const SIMULATION_WEBHOOK_URL = import.meta.env.VITE_SIMULATION_WEBHOOK_URL_PROD;
 
 export const Calculator = () => {
   const [amount, setAmount] = useState("");
@@ -34,7 +34,7 @@ export const Calculator = () => {
   const [hasSubmittedDetails, setHasSubmittedDetails] = useState(false);
 
   const calculateAdvance = () => {
-    if (amount && days && operator) {
+    if (amount && days) {
       const value = parseFloat(amount.replace(/[^\d,]/g, "").replace(",", "."));
       // Simulação simples: 5% de taxa
       const advanceValue = value * 0.95;
@@ -68,7 +68,7 @@ export const Calculator = () => {
         valor_original: value,
         valor_antecipado: result,
         prazo_dias: days,
-        operadora: operator,
+        //operadora: operator,
         nome: nome,
         telefone: telefone,
         data_simulacao: new Date().toISOString(),

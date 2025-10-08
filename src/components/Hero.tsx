@@ -22,6 +22,9 @@ export const Hero = () => {
             <Button 
               size="lg" 
               className="bg-primary hover:bg-primary/90 text-white font-semibold px-8 rounded-xl mt-3"
+               onClick={() => {
+                document.getElementById("simular")?.scrollIntoView({ behavior: "smooth" });
+              }}
             >
               Simule Agora
             </Button>
