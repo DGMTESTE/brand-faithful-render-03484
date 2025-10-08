@@ -13,8 +13,8 @@ const steps = [
   },
   {
     icon: CheckCircle,
-    title: "Receba em até 2 dias",
-    description: "Receba o valor antecipado em sua conta em até 2 dias úteis.",
+    title: "Receba em 24 horas",
+    description: "Receba o valor antecipado em sua conta em até 24 horas.",
   },
 ];
 

@@ -14,9 +14,9 @@ export const CallToAction = () => {
           </p>
           <Button
             size="lg"
-            className="bg-success hover:bg-success/90 text-white font-semibold px-8"
+            className="bg-success hover:bg-success/90 text-white font-semibold px-8 rounded-xl"
           >
-            <MessageCircle className="mr-2 h-5 w-5" />
+            <MessageCircle className="mr-2 h-5 w-5 " />
             Antecipar via WhatsApp
           </Button>
         </div>

@@ -3,8 +3,8 @@ import { Clock, DollarSign, Shield } from "lucide-react";
 const benefits = [
   {
     icon: Clock,
-    title: "Receba em até 2 dias",
-    description: "Pagamentos nas contas confirmada 2 dias úteis, sem complicação.",
+    title: "Receba em 24 horas",
+    description: "Pagamentos nas contas confirmadas em 24 horas, sem complicação.",
   },
   {
     icon: DollarSign,
@@ -27,7 +27,7 @@ export const Benefits = () => {
             Os planos de saúde demoram. Você não precisa esperar.
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Com a Bhio Bank, você recebe seus pagamentos de planos de saúde em até 2 dias úteis, 
+            Com a BhioBank, você recebe seus pagamentos de planos de saúde em até 24 horas, 
             sem burocracia e com taxas competitivas.
           </p>
         </div>

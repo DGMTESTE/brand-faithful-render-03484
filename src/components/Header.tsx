@@ -2,6 +2,13 @@ import { Button } from "@/components/ui/button";
 import bhioBankLogo from "@/assets/bhio-bank-logo.png";
 
 export const Header = () => {
+
+  const logoStyle = {
+    height: "130px",
+    width: "auto",
+    transition: "transform 0.3s ease",
+  };
+
   return (
     <header className="border-b border-border bg-card">
       <div className="container mx-auto px-4 sm:px-6 lg:px-10">
@@ -10,7 +17,7 @@ export const Header = () => {
             <img 
               src={bhioBankLogo} 
               alt="Bhio Bank" 
-              className="h-8 w-auto"
+              style={logoStyle}
             />
           </div>
           
@@ -18,14 +25,15 @@ export const Header = () => {
             <a href="#como-funciona" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
               Como funciona
             </a>
-            <a href="#simular" className="text-sm font-medium text-foreground hover:text-primary transition-colors">
+            <a href="#simular" className=" text-sm font-medium text-foreground hover:text-primary transition-colors ">
               Simule agora
             </a>
           </nav>
-          
-          <Button className="bg-primary hover:bg-primary/90">
-            Entrar
+          <a href="#simular">
+          <Button className="bg-primary hover:bg-primary/90 rounded-xl">
+            Simular
           </Button>
+          </a>
         </div>
       </div>
     </header>

@@ -20,7 +20,7 @@ import { toast } from "@/hooks/use-toast";
 import { Loader2 } from "lucide-react";
 
 // Webhook URL - this is a public endpoint so it's safe to store in code
-const SIMULATION_WEBHOOK_URL = "https://workflows.autobotics.com.br/webhook-test/53139f23-2c4b-4ec3-bb6e-5d0ce6b10f25";
+const SIMULATION_WEBHOOK_URL = import.meta.env.VITE_SIMULATION_WEBHOOK_URL;
 
 export const Calculator = () => {
   const [amount, setAmount] = useState("");
@@ -125,7 +125,7 @@ export const Calculator = () => {
             Simule sua antecipação
           </h2>
           <p className="text-lg text-muted-foreground">
-            Veja o quanto você pode receber adiantado de forma rápida.
+            Antecipe seus recebimentos de planos de saúde de forma rápida e segura
           </p>
         </div>
         
@@ -133,18 +133,19 @@ export const Calculator = () => {
           <div className="grid gap-8 lg:grid-cols-2 items-start">
             <div className="space-y-6 rounded-xl bg-card p-8 shadow-sm border border-border">
               <div className="space-y-2">
-                <Label htmlFor="amount">Valor a receber</Label>
+                <Label htmlFor="amount">Valor que deseja antecipar dos serviços prestados</Label>
                 <Input
                   id="amount"
                   type="text"
                   placeholder="R$ 0,00"
                   value={amount}
                   onChange={handleAmountChange}
+                  className="rounded-xl"
                 />
               </div>
               
               <div className="space-y-2">
-                <Label>Prazo de recebimento</Label>
+                <Label>Em quantos dias o plano normalmente faz o pagamento?</Label>
                 <div className="grid grid-cols-3 gap-3">
                   {(["30", "60", "90"] as const).map((dayOption) => (
                     <button
@@ -163,10 +164,11 @@ export const Calculator = () => {
                 </div>
               </div>
               
+              {/*
               <div className="space-y-2">
                 <Label htmlFor="operator">Operadora do plano</Label>
                 <Select value={operator} onValueChange={setOperator}>
-                  <SelectTrigger id="operator">
+                  <SelectTrigger id="operator" className="rounded-xl">
                     <SelectValue placeholder="Selecione" />
                   </SelectTrigger>
                   <SelectContent>
@@ -178,9 +180,9 @@ export const Calculator = () => {
                   </SelectContent>
                 </Select>
               </div>
-              
+              */}
               <Button 
-                className="w-full bg-primary hover:bg-primary/90"
+                className="w-full bg-primary hover:bg-primary/90 rounded-xl"
                 size="lg"
                 onClick={calculateAdvance}
               >
