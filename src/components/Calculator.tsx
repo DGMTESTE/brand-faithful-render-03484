@@ -35,10 +35,6 @@ export const Calculator = () => {
 
   const calculateAdvance = () => {
     if (amount && days) {
-      const value = parseFloat(amount.replace(/[^\d,]/g, "").replace(",", "."));
-      // Simulação simples: 5% de taxa
-      const advanceValue = value * 0.95;
-      setResult(advanceValue);
       setShowModal(true);
     } else {
       toast({
@@ -63,10 +59,11 @@ export const Calculator = () => {
 
     try {
       const value = parseFloat(amount.replace(/[^\d,]/g, "").replace(",", "."));
+      const advanceValue = value * 0.95;
       
       const payload = {
         valor_original: value,
-        valor_antecipado: result,
+        valor_antecipado: advanceValue,
         prazo_dias: days,
         //operadora: operator,
         nome: nome,
@@ -83,6 +80,7 @@ export const Calculator = () => {
       });
 
       if (response.ok) {
+        setResult(advanceValue);
         setHasSubmittedDetails(true);
         setShowModal(false);
         toast({
