@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { MessageCircle } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
 
 export const CallToAction = () => {
   return (
@@ -15,8 +15,9 @@ export const CallToAction = () => {
           <Button
             size="lg"
             className="bg-success hover:bg-success/90 text-white font-semibold px-8 rounded-xl"
+            onClick={() => window.open("https://w.app/xu3xyv", "_blank")}
           >
-            <MessageCircle className="mr-2 h-5 w-5 " />
+            <FaWhatsapp className="mr-2 h-5 w-5 " />
             Antecipar via WhatsApp
           </Button>
         </div>
