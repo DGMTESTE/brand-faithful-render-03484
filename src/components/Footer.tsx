@@ -53,7 +53,7 @@ export const Footer = () => {
               Redes Sociais
             </h3>
             <div className="flex gap-4">
-              <a href="#" className="text-muted-foreground hover:text-primary transition-colors">
+              <a href="https://www.instagram.com/bhiobank/" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
                 <Instagram className="h-5 w-5" />
               </a>
               <a href="https://w.app/xu3xyv" target="_blank" className="text-muted-foreground hover:text-primary transition-colors">
