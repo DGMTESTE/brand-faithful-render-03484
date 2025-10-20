@@ -59,7 +59,7 @@ export const Calculator = () => {
 
     try {
       const value = parseFloat(amount.replace(/[^\d,]/g, "").replace(",", "."));
-      const advanceValue = value * 0.95;
+      const advanceValue = value * 0.97;
       
       const payload = {
         valor_original: value,

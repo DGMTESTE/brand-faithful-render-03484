@@ -15,7 +15,7 @@ export const CallToAction = () => {
           <Button
             size="lg"
             className="bg-success hover:bg-success/90 text-white font-semibold px-8 rounded-xl"
-            onClick={() => window.open("https://w.app/xu3xyv", "_blank")}
+            onClick={() => window.open("https://wa.me/5551989621441", "_blank")}
           >
             <FaWhatsapp className="mr-2 h-5 w-5 " />
             Antecipar via WhatsApp
