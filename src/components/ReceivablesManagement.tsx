@@ -24,28 +24,28 @@ const ReceivablesManagement = () => {
     {
       id: "1",
       date: "2025-11-20",
-      description: "Antecipação - Lote 001",
+      description: "Consulta Clínica",
       amount: 15000,
       status: "pending",
     },
     {
       id: "2",
       date: "2025-10-25",
-      description: "Antecipação - Lote 002",
+      description: "Procedimento Cirúrgico",
       amount: 28500,
       status: "received",
     },
     {
       id: "3",
       date: "2025-12-15",
-      description: "Antecipação - Lote 003",
-      amount: 42000,
+      description: "Teleconsulta",
+      amount: 10000,
       status: "pending",
     },
     {
       id: "4",
       date: "2025-09-30",
-      description: "Antecipação - Lote 004",
+      description: "Exames Diagnósticos",
       amount: 19800,
       status: "received",
     },
@@ -86,35 +86,33 @@ const ReceivablesManagement = () => {
             Gestão de Recebíveis
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Acompanhe seus valores antecipados e programados em tempo real
+            Saiba exatamente quanto você já recebeu e quanto ainda tem a receber pelos serviços prestados.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <Card className="border-l-4 border-l-primary">
+          <Card className="border-l-4 border-l-bold">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
-                Total em Antecipação
+                Valor Total Processado
               </CardTitle>
               <TrendingUp className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">{formatCurrency(totalPending + totalReceived)}</div>
-              <p className="text-xs text-muted-foreground mt-1">
-                Valor total processado
-              </p>
+             
             </CardContent>
           </Card>
 
-          <Card className="border-l-4 border-l-accent">
+          <Card className="border-l-4 border-l-primary">
             <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
               <CardTitle className="text-sm font-medium">
                 A Receber
               </CardTitle>
-              <Calendar className="h-4 w-4 text-accent" />
+              <Calendar className="h-4 w-4 text-primary" />
             </CardHeader>
             <CardContent>
-              <div className="text-2xl font-bold text-accent-foreground">
+              <div className="text-2xl font-bold text-primary">
                 {formatCurrency(totalPending)}
               </div>
               <p className="text-xs text-muted-foreground mt-1">
@@ -177,7 +175,7 @@ const ReceivablesManagement = () => {
                             Recebido
                           </span>
                         ) : (
-                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-accent-foreground">
+                          <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-accent/10 text-primary">
                             <Calendar className="h-3 w-3 mr-1" />
                             Pendente
                           </span>
@@ -191,12 +189,7 @@ const ReceivablesManagement = () => {
           </CardContent>
         </Card>
 
-        <div className="mt-6 p-4 bg-muted/50 rounded-lg">
-          <p className="text-sm text-muted-foreground text-center">
-            💡 <strong>Integração com sistema interno:</strong> Esta seção está pronta para se conectar com sua API existente. 
-            Atualize o endpoint no componente ReceivablesManagement.tsx para exibir dados em tempo real.
-          </p>
-        </div>
+        
       </div>
     </section>
   );
