@@ -14,21 +14,21 @@ import {
 const RatesComparison = () => {
   const comparisonData = [
     {
-      name: "Garantia\nde imóvel",
-      rate: 1.09,
-      color: "hsl(var(--success))",
-      showCheck: true,
+      name: "Antecipação Bhiobank",
+      rate: 3,
+      color: "hsl(var(--primary))",
+      showCheck: false,
     },
     {
-      name: "Garantia\nde veículo",
-      rate: 1.49,
-      color: "hsl(var(--success))",
-      showCheck: true,
+      name: "Capital de Giro",
+      rate: 4.5,
+      color: "hsl(195 28% 25%)",
+      showCheck: false,
     },
     {
       name: "Empréstimo\nPessoal",
-      rate: 6.47,
-      color: "hsl(var(--muted))",
+      rate: 7.47,
+      color: "hsl(195 28% 25%)",
       showCheck: false,
     },
     {
@@ -119,22 +119,15 @@ const RatesComparison = () => {
           {/* Right side - Text and CTA */}
           <div className="space-y-6">
             <div className="space-y-4">
+              <h3 className="text-3xl md:text-4xl font-bold leading-tight">
+                Entenda, compare e escolha melhor:
+              </h3>
               <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
-                COMPARE AS TAXAS E COMPROVE
+                Crédito consciente e taxas justas, aqui você economiza e cresce com segurança..
               </p>
-              <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                Aqui combatemos o mau endividamento
-              </h2>
             </div>
             
-            <Button 
-              size="lg" 
-              className="bg-[#86BC24] hover:bg-[#75a820] text-white font-semibold px-8 py-6 text-base group"
-              onClick={scrollToCalculator}
-            >
-              Simule grátis
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-            </Button>
+           
           </div>
         </div>
       </div>
@@ -142,4 +135,4 @@ const RatesComparison = () => {
   );
 };
 
-export default RatesComparison;
+export default RatesComparison;
