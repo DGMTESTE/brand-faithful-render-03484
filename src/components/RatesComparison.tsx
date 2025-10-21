@@ -21,13 +21,7 @@ const RatesComparison = () => {
     },
     {
       name: "Capital de Giro",
-      rate: 4.5,
-      color: "hsl(195 28% 25%)",
-      showCheck: false,
-    },
-    {
-      name: "Empréstimo\nPessoal",
-      rate: 7.47,
+      rate: 6.5,
       color: "hsl(195 28% 25%)",
       showCheck: false,
     },
@@ -95,17 +89,32 @@ const RatesComparison = () => {
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis
-                  dataKey="name"
-                  tick={{ 
-                    fill: "hsl(var(--foreground))", 
-                    fontSize: 12,
-                    textAnchor: "middle"
-                  }}
-                  interval={0}
-                  height={80}
-                  tickLine={false}
-                />
-                <YAxis hide />
+                    dataKey="name"
+                    interval={0}
+                    height={80}
+                    tickLine={false}
+                    tick={({ x, y, payload }) => {
+                      const words = payload.value.split(' ');
+                      const lineHeight = 14;
+
+                      return (
+                        <text
+                          x={x}
+                          y={y + 10}
+                          textAnchor="middle"
+                          fill="hsl(var(--foreground))"
+                          fontSize={12}
+                        >
+                          {words.map((word, index) => (
+                            <tspan key={index} x={x} dy={index === 0 ? 0 : lineHeight}>
+                              {word}
+                            </tspan>
+                          ))}
+                        </text>
+                      );
+                    }}
+                  />
+
                 <Bar dataKey="rate" radius={[8, 8, 0, 0]}>
                   {comparisonData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={entry.color} />
@@ -120,9 +129,9 @@ const RatesComparison = () => {
           <div className="space-y-6">
             <div className="space-y-4">
               <h3 className="text-3xl md:text-4xl font-bold leading-tight">
-                Entenda, compare e escolha melhor:
+                Entenda, compare e escolha melhor
               </h3>
-              <p className="text-sm uppercase tracking-wider text-muted-foreground font-medium">
+               <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
                 Crédito consciente e taxas justas, aqui você economiza e cresce com segurança..
               </p>
             </div>
@@ -135,4 +144,4 @@ const RatesComparison = () => {
   );
 };
 
-export default RatesComparison;
+export default RatesComparison;

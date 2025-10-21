@@ -14,7 +14,7 @@ export const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
           <div className="space-y-6 text-white">
             <h1 className="text-4xl font-bold leading-tight sm:text-5xl lg:text-6xl">
-              Receba hoje pelos serviços que o plano ainda vai te pagar
+               Receba em 24 horas o procedimento que você realizou hoje.
             </h1>
             <p className="text-lg text-white/90 sm:text-xl">
               Antecipe seus recebíveis de planos de saúde de forma simples e rápida.
@@ -34,8 +34,8 @@ export const Hero = () => {
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-success/20 to-primary/20 rounded-3xl blur-2xl" />
               <div className="relative bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
-                <div className="flex items-center justify-center mb-6">
-                  <div className="rounded-2xl p-6">
+                <div className="flex items-center justify-center">
+                  <div className="rounded-2xl">
                     <img 
                       src={medicoPrancheta} 
                       alt="médico sorrindo" 

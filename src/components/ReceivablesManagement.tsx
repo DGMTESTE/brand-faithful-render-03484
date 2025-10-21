@@ -15,6 +15,7 @@ interface Receivable {
   id: string;
   date: string;
   description: string;
+  plano: string;
   amount: number;
   status: "pending" | "received";
 }
@@ -25,6 +26,7 @@ const ReceivablesManagement = () => {
       id: "1",
       date: "2025-11-20",
       description: "Consulta Clínica",
+      plano: "SulAmérica",
       amount: 15000,
       status: "pending",
     },
@@ -32,6 +34,7 @@ const ReceivablesManagement = () => {
       id: "2",
       date: "2025-10-25",
       description: "Procedimento Cirúrgico",
+      plano: "Unimed",
       amount: 28500,
       status: "received",
     },
@@ -39,6 +42,7 @@ const ReceivablesManagement = () => {
       id: "3",
       date: "2025-12-15",
       description: "Teleconsulta",
+      plano: "Unimed VTPR",
       amount: 10000,
       status: "pending",
     },
@@ -46,6 +50,7 @@ const ReceivablesManagement = () => {
       id: "4",
       date: "2025-09-30",
       description: "Exames Diagnósticos",
+      plano: "Ipê",
       amount: 19800,
       status: "received",
     },
@@ -154,8 +159,9 @@ const ReceivablesManagement = () => {
               <Table>
                 <TableHeader>
                   <TableRow>
-                    <TableHead>Data</TableHead>
+                    <TableHead>Data do procedimento</TableHead>
                     <TableHead>Descrição</TableHead>
+                     <TableHead>Plano</TableHead>
                     <TableHead className="text-right">Valor</TableHead>
                     <TableHead className="text-center">Status</TableHead>
                   </TableRow>
@@ -165,6 +171,7 @@ const ReceivablesManagement = () => {
                     <TableRow key={item.id}>
                       <TableCell>{formatDate(item.date)}</TableCell>
                       <TableCell>{item.description}</TableCell>
+                      <TableCell>{item.plano}</TableCell>
                       <TableCell className="text-right font-medium">
                         {formatCurrency(item.amount)}
                       </TableCell>
