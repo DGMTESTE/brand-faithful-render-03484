@@ -160,17 +160,17 @@ const ReceivablesManagement = () => {
                 <TableHeader>
                   <TableRow>
                     <TableHead>Data do procedimento</TableHead>
+                    <TableHead>Status</TableHead>
+                    <TableHead>Plano</TableHead>
                     <TableHead>Descrição</TableHead>
-                     <TableHead>Plano</TableHead>
-                    <TableHead className="text-right">Valor</TableHead>
-                    <TableHead className="text-center">Status</TableHead>
+                    <TableHead>Valor</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {receivables.map((item) => (
                     <TableRow key={item.id}>
                       <TableCell>{formatDate(item.date)}</TableCell>
-                      <TableCell className="text-center">
+                      <TableCell>
                         {item.status === "received" ? (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
                             <CheckCircle className="h-3 w-3 mr-1" />
@@ -185,7 +185,7 @@ const ReceivablesManagement = () => {
                       </TableCell>
                       <TableCell>{item.plano}</TableCell>
                       <TableCell>{item.description}</TableCell>
-                      <TableCell className="text-right font-medium">
+                      <TableCell className="font-medium">
                         {formatCurrency(item.amount)}
                       </TableCell>
                       
