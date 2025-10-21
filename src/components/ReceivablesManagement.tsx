@@ -170,11 +170,6 @@ const ReceivablesManagement = () => {
                   {receivables.map((item) => (
                     <TableRow key={item.id}>
                       <TableCell>{formatDate(item.date)}</TableCell>
-                      <TableCell>{item.description}</TableCell>
-                      <TableCell>{item.plano}</TableCell>
-                      <TableCell className="text-right font-medium">
-                        {formatCurrency(item.amount)}
-                      </TableCell>
                       <TableCell className="text-center">
                         {item.status === "received" ? (
                           <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-success/10 text-success">
@@ -188,6 +183,12 @@ const ReceivablesManagement = () => {
                           </span>
                         )}
                       </TableCell>
+                      <TableCell>{item.plano}</TableCell>
+                      <TableCell>{item.description}</TableCell>
+                      <TableCell className="text-right font-medium">
+                        {formatCurrency(item.amount)}
+                      </TableCell>
+                      
                     </TableRow>
                   ))}
                 </TableBody>
